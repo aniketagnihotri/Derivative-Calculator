@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("This is Aniket Agnihotri's Basic Derivative Calculator");
+        System.out.println("This program will use your inputted data to find the derivative for a function that is comprised of real numbers");
+        System.out.println("Would you like to begin?");
+        Scanner decisionofUser = new Scanner(System.in);
+        String decision = decisionofUser.nextLine();
+        if (!decision.equals("yes") && !decision.equals("Yes")) {
+            System.out.println("Type 'no' to confirm!");
+            double var3 = 1.0D;
+        } else {
+            System.out.println("Let's begin!");
+            System.out.println("Print the coefficient of your x term below");
+        }
+
+        Scanner firstVariable = new Scanner(System.in);
+        double oneVariable = firstVariable.nextDouble();
+        System.out.println("Print the power of your x term below");
+        Scanner secondVariable = new Scanner(System.in);
+        double twoVariable = secondVariable.nextDouble();
+        if (oneVariable == 1.0D) {
+            System.out.println("Your term currently looks like this: y=x^" + twoVariable);
+        } else {
+            System.out.println("Your term currently looks like this: y=" + oneVariable + "x^" + twoVariable);
+        }
+
+        if (oneVariable == 0.0D) {
+            System.out.println("After being simplified, your term is equal to 0.0");
+        }
+
+        if (twoVariable == 0.0D) {
+            System.out.println("Because the power of your x term is 0.0, it is equal to 1.0*(your coeffiecient)");
+            System.out.println("After being simplified, your term is equal to " + oneVariable);
+        }
+
+        if (oneVariable != 0.0D && twoVariable != 0.0D) {
+            double finalCoefficient = oneVariable * twoVariable;
+            System.out.println("The coefficient of your derivative is " + finalCoefficient);
+            --twoVariable;
+            System.out.println("The power of your derivative is " + twoVariable);
+            System.out.println("Your derivative looks like this: y=" + finalCoefficient + "x^" + twoVariable);
+        } else {
+            System.out.println("Your term is a constant");
+            System.out.println("Your derivative is equal to 0.0");
+        }
+
+    }
+}
